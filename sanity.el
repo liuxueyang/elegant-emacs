@@ -39,4 +39,9 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
 
+(setq-default eshell-output-filter-functions
+              '(eshell-postoutput-scroll-to-bottom eshell-handle-control-codes
+                                                   eshell-handle-ansi-color eshell-watch-for-password-prompt
+                                                   eshell-truncate-buffer))
+
 (provide 'sanity)
